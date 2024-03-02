@@ -13,6 +13,7 @@ textLoad();
 
 let aboutMeText = document.querySelector(".aboutme");
 const readMore = document.querySelector(".read-more");
+
 readMore.addEventListener("click", function () {
   readMore.classList.toggle("clicked");
   if (readMore.classList.contains("clicked")) {
@@ -40,8 +41,8 @@ const projList = document.querySelector(".project-list");
 let scrollAmount = 0;
 const scrollStep = calculateStep();
 
+
 prevBtn.addEventListener("click", () => {
-  console.log("prev-btn clicked");
   scrollAmount -= scrollStep;
   if (scrollAmount < 0) {
     scrollAmount = 0;
@@ -49,16 +50,16 @@ prevBtn.addEventListener("click", () => {
   slideTo(scrollAmount);
   updateButtonVisibility();
 });
-nextBtn.addEventListener("click", () => {
+const projectSliderHandler = () => {
   scrollAmount += scrollStep;
-  console.log(scrollAmount);
   if (scrollAmount > projList.scrollWidth - projList.clientWidth) {
     scrollAmount = projList.scrollWidth - projList.clientWidth;
   }
   slideTo(scrollAmount);
   updateButtonVisibility();
-});
+};
 
+nextBtn.addEventListener("click", projectSliderHandler);
 // Function to calculate scroll step dynamically based on image sizes
 function calculateStep() {
   const firstImage = document.querySelector(".overlay");
@@ -130,7 +131,7 @@ function sendEmail() {
     Subject: sub.value,
     Body: bodyMesg,
   }).then((message) =>
-    alert("Email sent successfully!Thanks for your interest."),
+    alert("Email sent successfully!Thanks for your interest.")
   );
 }
 

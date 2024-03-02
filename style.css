@@ -161,10 +161,7 @@ button {
   color: aqua;
   background-color: transparent;
   border: 2px solid aqua;
-  box-shadow:
-    2px 2px 5px aqua,
-    2px -2px 5px aqua,
-    -2px 2px 5px aqua,
+  box-shadow: 2px 2px 5px aqua, 2px -2px 5px aqua, -2px 2px 5px aqua,
     -2px -2px 5px aqua;
   border-radius: 5px;
   z-index: 2;
@@ -172,9 +169,7 @@ button {
 button:hover {
   background-color: aqua;
   color: black;
-  box-shadow:
-    0px 0px 5px aqua,
-    0px 0px 50px aqua;
+  box-shadow: 0px 0px 5px aqua, 0px 0px 50px aqua;
 }
 .follow-text {
   height: 3rem;
@@ -505,13 +500,12 @@ button:hover {
 }
 
 .project-list {
-  overflow: auto;
+  overflow: hidden;
   scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-  -webkit-overflow-scrolling: touch;
   display: flex;
   align-items: center;
   gap: 1rem;
+  scrollbar-width: none;
 }
 
 .proj-img {
