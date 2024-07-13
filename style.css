@@ -95,6 +95,7 @@ a:hover {
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
+
 }
 .home-content {
   margin-right: 4rem;
@@ -514,6 +515,7 @@ button:hover {
   background-color: white;
   flex-shrink: 0; /* Prevent images from shrinking */
   position: relative;
+  overflow: hidden;
 }
 
 .proj-img img {
